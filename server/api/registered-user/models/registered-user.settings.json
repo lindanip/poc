@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "registered_users",
+  "info": {
+    "name": "RegisteredUser"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "age": {
+      "type": "integer",
+      "required": true
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    }
+  }
+}
