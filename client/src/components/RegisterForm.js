@@ -35,7 +35,9 @@ const RegistrationForm = () => {
     
     const submitForm = () => {
         console.log('form submitted');
-        
+        // console.log(`marked-- ${formValues.username}`);
+
+
         setFromValues({
             username: '',
             email: '',
@@ -66,12 +68,21 @@ const RegistrationForm = () => {
                 secureTextEntry={true}
                 handleTextChange={handleTextChange}
             />
-            <Pressable style={style.registerBtn} onPress={submitForm}>
+            <Pressable
+                style={style.registerBtn}
+                onPress={submitForm}
+            >
                 <Text style={style.btnText}>Register</Text>
             </Pressable>
         </View>
     )
 }
+
+// onSubmit={e => {
+//     e.preventDefault();
+//     addTodo({ variables: { type: input.value } });
+//     input.value = '';
+//   }}
 
 const style = StyleSheet.create({
   formView: {
