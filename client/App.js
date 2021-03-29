@@ -1,13 +1,21 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import RegistrationForm from './src/components/RegisterForm';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+
+const client = new ApolloClient({
+  uri: 'http://127.0.0.1/graphql',
+  cache: new InMemoryCache()
+});
+
 
 const App = () => {
   return (
-    <View>
+    <ApolloProvider client={client}>
       <Text style={style.heading}>Registration</Text>
       <RegistrationForm />
-    </View>
+    </ApolloProvider>
   )
 }
 

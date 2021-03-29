@@ -2,6 +2,25 @@ import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import TextBox from './TextBox';
 import useFormData from '../Hooks/useFormData';
+import {gql, useQuery, useMutation } from '@apollo/client';
+
+
+// const {loading, error, data} = useMutation(gql`
+//     mutation createRegisteredUser{
+//         createRegisteredUser(input: {
+//             data: {
+//                 username: ${username},
+//                 email: ${email},
+//                 age: ${age},
+//                 password: ${password}
+//             }
+//         }){
+//             registeredUser{
+//                 username
+//             }
+//         }
+//     }
+// `);
 
 
 const RegistrationForm = () => {
@@ -13,7 +32,7 @@ const RegistrationForm = () => {
         password: '',
         vPassword: ''
     });
-
+    
     const submitForm = () => {
         console.log('form submitted');
         
